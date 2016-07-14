@@ -1,14 +1,5 @@
 {% extends "base.html" %}
-{% block navigation %}
-     <div class="navigation">
-        <ol class="nav">
-          <li class="current"><a href="{{ SITEURL }}">Blog</a> </li>
-          <li><a href="{{ SITEURL }}/archives.html">Archive</a></li>
-          <li><a href="{{ SITEURL }}/tags.html">Tags</a> </li>
-          <li><a href="{{ SITEURL }}/{{ FEED_RSS }}">RSS</a> </li>
-        </ol>
-      </div>
-{% endblock navigation %}
+
 {% block content %}        
 <section id="content">
 <div class="posts">
@@ -26,7 +17,7 @@
                       {% if article.author %}
                          Por <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
                       {% endif %}</abbr>
-                <div class="entry-summary"> {{ article.summary }} </div>
+	              <div class="entry-summary"> {{ article.summary }} </div>
                 </footer><!-- /.post-info -->
                 <!-- /.entry-content -->
             </article>
