@@ -49,15 +49,15 @@
     {% block navigation %}
      <div class="navigation">
         <ol class="nav">
-          <li class="current"><a href="{{ SITEURL }}">Blog</a> </li>
-          <li><a href="{{ SITEURL }}/archives.html">Archive</a></li>
-          <li><a href="{{ SITEURL }}/tags.html">Tags</a> </li>
-          <li><a href="{{ SITEURL }}/{{ FEED_RSS }}">RSS</a> </li>
-	  {% if DISPLAY_PAGES_ON_MENU %}
+          <li><a href="{{ SITEURL }}">Blog</a> </li>
+  	  {% if DISPLAY_PAGES_ON_MENU %}
               {% for p in PAGES %}
                   <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
               {% endfor %}
-	  {% endif %}
+          {% endif %} 
+          <li><a href="{{ SITEURL }}/archives.html">Archivo</a></li>
+          <li><a href="{{ SITEURL }}/tags.html">Tags</a> </li>
+          <li><a href="{{ SITEURL }}/{{ FEED_RSS }}">RSS</a> </li>
         </ol>
       </div>
     {% endblock navigation %}
