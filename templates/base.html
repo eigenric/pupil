@@ -4,14 +4,15 @@
         {% block head %}
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
         
-        <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
-        
+	{% for font in GOOGLE_FONTS | default(['Ribeye Marrow']) %}
+		{% set url = font.split() | join('+') %}
+		<link href='http://fonts.googleapis.com/css?family={{ url }}' rel='stylesheet' type='text/css' />
+	{% endfor %}
         
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" type="text/css" />
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.css" type="text/css" />
+	 <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-fontin.css" type="text/css" />
         <meta charset="utf-8" />
       
         {% if FEED_RSS %}
@@ -74,16 +75,16 @@
                     <a href="{{SITEURL}}">{{AUTHOR}}</a> (2016)
                 </div>
                 <div>
-                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/slok/blog">Github</a>
+                    This work is licensed under <a rel="license" href="http://opensource.org/licenses/bsd-3-clause">3 clause BSD</a>. Source code available on <a rel="source code" href="https://github.com/pwaqo/iris">Github</a>
                 </div>
                 <div>
                     powered by <a href="http://getpelican.com/">Pelican</a>
                     and <a href="http://python.org">Python</a>. 
-                    <a href="http://github.com/slok/iris">Theme</a> by <a href="http://xlarrakoetxea.org">Xabier Larrakoetxea</a> based on <a href="http://flask.pocoo.org/">Flask</a> theme
+                    <a href="http://github.com/pwaqo/iris">Theme</a> by <a href="http://github.com/pwaqo">Ricardo Ruiz</a> based on <a href="http://github.com/slok/iris">Iris theme</a> by <a href="http://http://xlarrakoetxea.org">Xabier Larrakoetxea</a>
                 </div>
                 <div>
                     Social icons (font awesome) by <a href="http://fortawesome.github.com/Font-Awesome/"> fort awesome</a>.
-                    <a href="http://www.google.com/webfonts/specimen/The+Girl+Next+Door">Title</a>, <a href="http://www.google.com/webfonts/specimen/Marcellus">headers</a> and <a href="http://www.google.com/webfonts/specimen/Inconsolata">source code</a> fonts by google fonts
+                    <a href="http://www.google.com/webfonts/specimen/Ribeye+Marrow">Title</a>, <a href="http://www.exljbris.com/fontin.html">Headers and Body</a>
                 </div>
                 <div class="social">
                     {% for name, link in SOCIAL %}
