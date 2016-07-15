@@ -67,7 +67,10 @@
     {% endblock navigation %}
 
         <header id="banner" class="body">
-                <div class="banner"><a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></div>
+                <div class="banner">
+			<a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a>
+			{% if USER_LOGO %}<img src="{{ SITEURL }}/images/{{ USER_LOGO }}"/>{% endif %}
+		</div>
         </header>
         <div class="box">
             {% block content %}
