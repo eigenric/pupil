@@ -56,9 +56,12 @@
                   <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
               {% endfor %}
           {% endif %} 
-          <li><a href="{{ SITEURL }}/archives.html">Archivo</a></li>
-          <li><a href="{{ SITEURL }}/tags.html">Tags</a> </li>
+	  {% for name, url in MENUITEMS | default([('Archive', 'archives.html'), ('Tags', 'tags.html')]) %}
+	      <li><a href="{{ SITEURL }}/{{ url }}">{{ name }}</a></li>
+	  {% endfor %}
+	  {% if FEED_RSS %}
           <li><a href="{{ SITEURL }}/{{ FEED_RSS }}">RSS</a> </li>
+	  {% endif %}
         </ol>
       </div>
     {% endblock navigation %}
