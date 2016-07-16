@@ -1,30 +1,34 @@
-====
-Iris
-====
+=====
+Pupil
+=====
 
-What is iris?
--------------
+What is pupil?
+--------------
 
-Iris is a `pelican <http://getpelican.com>`_ theme based on `Flask webpage <http://flask.pocoo.org/>`_ 
+Pupil is a `pelican <http://getpelican.com>`_ theme based on `pupil theme <http://github.com/slok/pupil`_ 
 This theme is very simple and easy to read, perfect for a minimalist blog without much things and
 beautiful source code syntax (Thank you `pygments <http://pygments.org/>`_!)
 Also uses various fonts:
 
 - For social icons: `Font awesome <http://fortawesome.github.com/Font-Awesome/>`_
-- For the title: `The girl next door <http://www.google.com/webfonts/specimen/The+Girl+Next+Door>`_
-- For the headers: `Marcellus <http://www.google.com/webfonts/specimen/Marcellus>`_
-- For the soure code: `Inconsolata <http://www.google.com/webfonts/specimen/Inconsolata>`_
+- For the title: `Ribeye Marrow <http://www.google.com/webfonts/specimen/Ribeye+Marrow>`_
+- For the headers and body: `Fontin <http://www.exljbris.com/fontin.html>`_
+- For the source code: Consolas
 
 Preview
 -------
 
-.. image:: https://gist.github.com/slok/3885420/raw/bbb0c9598f32a7913b16f4ea4c0308e8c701ef9b/iris_marcellus.png
+.. image:: preview.png
     :align: center
 
 Variables
 ---------
 
 Some of the variables that could be used:
+
+- ``DISPLAY_PAGES_ON_MENU``
+- ``MENUITEMS`` : [('Archivo',ARCHIVES_URL),('Tags', TAGS_URL),('Contact', CONTACT_URL)]
+- ``USER_LOGO`` : Image banner (Example 'profile.png')
 
 - ``DISQUS_SITENAME``: For the disqus comments
 - ``EMAIL``: For the email "mailto:"
@@ -40,38 +44,43 @@ basic one is:
 
 If you have analytics across domains you can put this setting:
 
-- ``GOOGLE_ANALYTICS_DOMAIN = "xlarrakoetxea.org"``
+- ``GOOGLE_ANALYTICS_DOMAIN = ""``
 
 And if you have upper domain level (com, org, co.uk...)
 
 - ``GOOGLE_ANALYTICS_DOMAIN_UP = True``
 
+- You can also integrate this theme with `Summary https://github.com/getpelican/pelican-plugins/tree/master/summary`_
+  and `Read More Link https://github.com/getpelican/pelican-plugins/tree/master/read_more_link`_ plugins with the
+  following configuration:
+
+.. code-block: python
+
+	PLUGINS = ['plugins.summary.summary', 'plugins.read_more_link.read_more_link']
+
+	SUMMARY_END_MARKER = "<!-- readmore -->" # In rST .. readmore
+	READ_MORE_LINK_FORMAT = "<a class='more' href='{url}'>{text}</a>"
+	READ_MORE_LINK = '[Read More]'
+
 Installation
 ------------
 
-To install, go to your pelican theme directory and clone the repo. For 
-example::
+To install it, clone the repo and use pelican-themes. For example:
+
+.. code-block: console
     
-    $ cd /home/slok/.virtualenvs/blog/lib/python2.7/site-packages/pelican/themes/
-    $ git clone https://github.com/slok/iris.git
+    $ git clone http://github.com/pwaqo/pupil.git
+    $ pelican-themes -i pupil
 
-Set the variable ``THEME`` to ``iris`` in your pelican settings, like this::
+Set the variable ``THEME`` to ``pupil`` in your pelican settings, like this::
 
-    THEME = "iris"
+    THEME = "pupil"
 
 Notes
 -----
 
 The theme navigation bar does a fade in if you scroll more than 300 pixels to
 increase the readability of an article.
-
-ReStructuredText creates ``tt`` with ````something```` that is equivalent to  markdown ``code``
-that is created wit ```something```. This renders inline source code. So I added ``tt`` to the
-css also, not only ``code`` like most themes. Example:
-
-
-.. image:: https://gist.github.com/slok/3885420/raw/4d7a8557780ab74c5ae797a4f6e82cbf11aec0c6/iris_inline.png
-    :align: center
 
 License
 -------
