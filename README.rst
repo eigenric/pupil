@@ -5,7 +5,7 @@ Pupil
 What is pupil?
 --------------
 
-Pupil is a `pelican <http://getpelican.com>`_ theme based on `pupil theme <http://github.com/slok/pupil`_ 
+Pupil is a `pelican <http://getpelican.com>`_ theme based on `iris theme <http://github.com/slok/iris>`_ 
 This theme is very simple and easy to read, perfect for a minimalist blog without much things and
 beautiful source code syntax (Thank you `pygments <http://pygments.org/>`_!)
 Also uses various fonts:
@@ -27,7 +27,7 @@ Variables
 Some of the variables that could be used:
 
 - ``DISPLAY_PAGES_ON_MENU``
-- ``MENUITEMS`` : [('Archivo',ARCHIVES_URL),('Tags', TAGS_URL),('Contact', CONTACT_URL)]
+- ``MENUITEMS`` : ``[('name', 'url')]``
 - ``USER_LOGO`` : Image banner (Example 'profile.png')
 
 - ``DISQUS_SITENAME``: For the disqus comments
@@ -50,25 +50,22 @@ And if you have upper domain level (com, org, co.uk...)
 
 - ``GOOGLE_ANALYTICS_DOMAIN_UP = True``
 
-- You can also integrate this theme with `Summary https://github.com/getpelican/pelican-plugins/tree/master/summary`_
-  and `Read More Link https://github.com/getpelican/pelican-plugins/tree/master/read_more_link`_ plugins with the
-  following configuration:
+- You can also integrate this theme with `Summary <https://github.com/getpelican/pelican-plugins/tree/master/summary>`_
+  and `Read More Link <https://github.com/getpelican/pelican-plugins/tree/master/read_more_link>`_ plugins with the
+  following configuration
 
-.. code-block: python
+.. code-block:: python
 
 	PLUGINS = ['plugins.summary.summary', 'plugins.read_more_link.read_more_link']
-
-	SUMMARY_END_MARKER = "<!-- readmore -->" # In rST .. readmore
+	SUMMARY_END_MARKER = "<!-- readmore -->" # In rst .. readmore
 	READ_MORE_LINK_FORMAT = "<a class='more' href='{url}'>{text}</a>"
 	READ_MORE_LINK = '[Read More]'
 
 Installation
 ------------
 
-To install it, clone the repo and use pelican-themes. For example:
+To install it, clone the repo and use pelican-themes. For example::
 
-.. code-block: console
-    
     $ git clone http://github.com/pwaqo/pupil.git
     $ pelican-themes -i pupil
 
