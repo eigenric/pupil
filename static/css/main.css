@@ -3,6 +3,7 @@ body         { font-family: 'Fontin','Georgia', serif; font-size: 18px; color: #
 a            { color: #004B6B; }
 a:hover      { color: #6D4100; }
 .box         { width: 740px; margin: 30px auto; }
+#content     { margin: 30px auto; }
 h2, h3, h4   { font-family: 'Fontin', serif; font-weight: normal; color: #222;}
 h1           { margin: 0 0 30px 0; background: no-repeat center;}
 h1 span      { display: none; }
@@ -87,29 +88,31 @@ div.navigation {
 /*posts*/
 .posts ol, .posts ul, .posts li  {list-style-type: none; padding: 0;}
 .posts li {padding-bottom: 30px;}
-.post { font-size: 50px;}
+.post { padding-top: 20px; }
 .post a {text-decoration: none;}
-.post-info abbr {font-size: 15px; color: #555; font-style: italic;}
+.post-info {  float: right; margin: 25px 50px auto; }
+.post-info,.post-summary abbr {font-size: 15px; color: #555;}
 article .archive{margin-top: 10px; margin-bottom: 10px;}
 
-.entry-content{margin-top: 50px; margin-bottom: 40px;}
+.entry-content{margin-top: 20px; margin-bottom: 40px;}
 
 h1.archive-entry-title,
-.entry-title,
-h1.archive-entry-title a{
-	font-family: 'Fontin', serif; font-weight: normal;
-    font-size: 40px; text-decoration: none;
-    /*margin: 15px 0 60px 0;
-	height: 0;*/
+h1.archive-entry-title a,
+h1.entry-title {
+    color: #222;
+    font-family: 'Fontin', serif;
+    font-weight: normal;
+    text-decoration: none;
 }
+
+h1.archive-entry-title, 
+h1.archive-entry-title a { font-size: 40px; }
+h1.entry-title{ display: inline-block; font-size: 50px;}
 
 h1.archive-entry-title {
-	margin: 0px 0px 5px 0px !important;
+	margin: 10px 0px 0px 0px !important;
 	height: auto;
 }
-
-
-.entry-title {color: #222; font-size: 50px; margin-bottom: 40px;}
 
 .entry-content h2{margin: 40px 0 5px 0; color: #004B6B;}
 
