@@ -15,15 +15,14 @@
     <h1 class="entry-title">
       {{ article.title }}
     </h1>
+    <footer class="post-info"><abbr>
+        Publicado el <b>{{ article.locale_date }}</b>
+        {% if article.author %}
+        por <b><a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a></b>
+        {% endif %}
+    </footer>
   </header>
-  <footer class="post-info">
-    <abbr>
-      {{ article.locale_date }} 
-      {% if article.author %}
-         Por <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
-      {% endif %}  
-    </abbr>
-  </footer><!-- /.post-info -->
+
   <div class="entry-content">
     {{ article.content }}
   </div><!-- /.entry-content -->
