@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
-{% block content %}        
+{% block content %}
 <section id="content">
 <div class="posts">
     <ol id="post-list">
-    {% for article in articles_page.object_list %}        
+    {% for article in articles_page.object_list %}
         <li>
             <article class="archive">
-                <header> 
+                <header>
                     <h1 class="archive-entry-title">
                         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a>
-                    </h1> 
+                    </h1>
                 </header>
                 <footer class="post-summary"><abbr>
-		      Publicado el {{ article.locale_date }} 
+		      Publicado el {{ article.locale_date }}
                       {% if article.author %}
                          Por <a class="url fn" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
                       {% endif %}</abbr>
@@ -22,6 +22,7 @@
                 <!-- /.entry-content -->
             </article>
         </li>
+        <hr>
     {% endfor %}
     </ol><!-- /#posts-list -->
 </div>
