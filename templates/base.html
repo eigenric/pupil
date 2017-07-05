@@ -3,24 +3,24 @@
 <head>
         {% block head %}
         <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
-        
+
 	{% for font in GOOGLE_FONTS | default(['Ribeye Marrow']) %}
 		{% set url = font.split() | join('+') %}
 		<link href='http://fonts.googleapis.com/css?family={{ url }}' rel='stylesheet' type='text/css' />
 	{% endfor %}
-        
+
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" />
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygments.css" type="text/css" />
         <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-awesome.css" type="text/css" />
 	 <link rel="stylesheet" href="{{ SITEURL }}/theme/css/font-fontin.css" type="text/css" />
         <meta charset="utf-8" />
-      
+
         {% if FEED_RSS %}
         <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
         {% endif %}
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-        <script src="{{ SITEURL }}/theme/js/main.js"></script> 
+        <script src="{{ SITEURL }}/theme/js/main.js"></script>
 	{% endblock head %}
 </head>
 
@@ -33,7 +33,7 @@
               {% for p in PAGES %}
                   <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
               {% endfor %}
-          {% endif %} 
+          {% endif %}
 	  {% for name, url in MENUITEMS | default([('Archive', 'archives.html'), ('Tags', 'tags.html')]) %}
 	      <li><a href="{{ SITEURL }}/{{ url }}">{{ name }}</a></li>
 	  {% endfor %}
@@ -47,7 +47,7 @@
         <header id="banner" class="body">
                 <div class="banner">
 			<a href="{{ SITEURL }}">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a>
-			{% if USER_LOGO %}<img src="{{ SITEURL }}/images/{{ USER_LOGO }}"/>{% endif %}
+			{% if USER_LOGO %}<img class="rotate" src="{{ SITEURL }}/images/{{ USER_LOGO }}"/>{% endif %}
 		</div>
         </header>
         <div class="box">
@@ -64,7 +64,7 @@
                 </div>
                 <div>
                     powered by <a href="http://getpelican.com/">Pelican</a>
-                    and <a href="http://python.org">Python</a>. 
+                    and <a href="http://python.org">Python</a>.
                     <a href="http://github.com/pwaqo/pupil">Pupil Theme</a> by <a href="http://github.com/pwaqo">Ricardo Ruiz</a> based on <a href="http://github.com/slok/iris">Iris theme</a> by <a href="http://http://xlarrakoetxea.org">Xabier Larrakoetxea</a>
                 </div>
                 <div>
